@@ -1,2 +1,9 @@
-folder,name,source_url,status,license
-CCFF,"Context-Aware Feature-Fusion for Co-occurring Object Detection in Autonomous Driving",https://github.com/BinayKSingh/CCFF,Code not yet released,MIT
+folder,source_repository,source_url,research_direction,method,relationship,license,priority_entry,redistribution_note
+"ultralytics","ultralytics/ultralytics","https://github.com/ultralytics/ultralytics","冠层图；叶面斑块","YOLO26 基线、P2 对照；YOLO 掩膜损失和部署","现有框架","AGPL-3.0","ultralytics/cfg/models/26/yolo26.yaml；ultralytics/engine/exporter.py；ultralytics/utils/loss.py","允许依 AGPL-3.0 许可证要求再分发"
+"FGD","yzd-v/FGD","https://github.com/yzd-v/FGD","冠层图","FGD","作者实现","Apache-2.0","mmdet/distillation/losses/fgd.py","允许依 Apache-2.0 许可证要求再分发"
+"yolov12","sunsmarterjie/yolov12","https://github.com/sunsmarterjie/yolov12","冠层图","YOLOv12 A2 / R-ELAN","作者实现","AGPL-3.0","ultralytics/nn/modules/block.py","允许依 AGPL-3.0 许可证要求再分发"
+"RepQ-ViT","zkkli/RepQ-ViT","https://github.com/zkkli/RepQ-ViT","冠层图；叶面斑块","RepQ-ViT","作者实现","Apache-2.0","detection/","允许依 Apache-2.0 许可证要求再分发"
+"EMCAD","SLDGroup/EMCAD","https://github.com/SLDGroup/EMCAD","叶面斑块","EMCAD","作者实现","UT Austin Research License（限制再分发）","lib/decoders.py","仅保存链接，未复制源代码；需另获授权方可重新分发"
+"PlantSeg","tqwei05/PlantSeg","https://github.com/tqwei05/PlantSeg","叶面斑块","PlantSeg","作者数据及基准","仓库级许可未核实","run.sh","仅保存链接，未复制源代码；许可待确认"
+"sam2","facebookresearch/sam2","https://github.com/facebookresearch/sam2","叶面斑块","SAM 2","作者实现","Apache-2.0（另见仓库其他许可文件）","sam2/sam2_image_predictor.py","允许依许可证要求再分发；应保留各许可证文件"
+"DualBranchSSLDomainAdaptation","ARGhanbari/DualBranchSSLDomainAdaptation","https://github.com/ARGhanbari/DualBranchSSLDomainAdaptation","叶面斑块","小麦穗域适应","作者实现","MIT","README.md；原论文图 9","允许依 MIT 许可证要求再分发"

@@ -1,13 +1,29 @@
 # CV2025_review
 
-GitHub 项目集中收藏仓库。每个项目保存在独立的子文件夹中，文件夹名称使用指定的项目名称。
+冠层图与叶面斑块研究相关 GitHub 开源项目集中目录。此处汇总来自两份《开源代码清单》的项目，已按 `owner/repo` 去重。
 
-## 已收录项目
+**统计：** 原始清单共 10 个项目条目，跨清单重复 2 个（`ultralytics/ultralytics`、`zkkli/RepQ-ViT`），合并后 **8 个唯一项目**。原测试项目 `BinayKSingh/CCFF` 已从当前目录移除。
 
-| 文件夹 | 项目 | 原始地址 | 状态 | 许可证 |
-| --- | --- | --- | --- | --- |
-| [CCFF](./CCFF/) | Context-Aware Feature-Fusion for Co-occurring Object Detection in Autonomous Driving | [BinayKSingh/CCFF](https://github.com/BinayKSingh/CCFF) | 原项目尚未公开代码，当前仅有说明文件和许可证 | MIT |
+## 项目目录（按原仓库名命名）
 
-项目索引另见 [projects.csv](./projects.csv)。
+| 本仓库目录 | 原始 GitHub 仓库 | 对应方向 | 许可证 / 复制限制 |
+| --- | --- | --- | --- |
+| [ultralytics](./ultralytics/SOURCE.md) | [ultralytics/ultralytics](https://github.com/ultralytics/ultralytics) | 冠层图；叶面斑块 | AGPL-3.0 |
+| [FGD](./FGD/SOURCE.md) | [yzd-v/FGD](https://github.com/yzd-v/FGD) | 冠层图 | Apache-2.0 |
+| [yolov12](./yolov12/SOURCE.md) | [sunsmarterjie/yolov12](https://github.com/sunsmarterjie/yolov12) | 冠层图 | AGPL-3.0 |
+| [RepQ-ViT](./RepQ-ViT/SOURCE.md) | [zkkli/RepQ-ViT](https://github.com/zkkli/RepQ-ViT) | 冠层图；叶面斑块 | Apache-2.0 |
+| [EMCAD](./EMCAD/SOURCE.md) | [SLDGroup/EMCAD](https://github.com/SLDGroup/EMCAD) | 叶面斑块 | UT Austin Research License（限制再分发） |
+| [PlantSeg](./PlantSeg/SOURCE.md) | [tqwei05/PlantSeg](https://github.com/tqwei05/PlantSeg) | 叶面斑块 | 仓库级许可未核实 |
+| [sam2](./sam2/SOURCE.md) | [facebookresearch/sam2](https://github.com/facebookresearch/sam2) | 叶面斑块 | Apache-2.0（另见仓库其他许可文件） |
+| [DualBranchSSLDomainAdaptation](./DualBranchSSLDomainAdaptation/SOURCE.md) | [ARGhanbari/DualBranchSSLDomainAdaptation](https://github.com/ARGhanbari/DualBranchSSLDomainAdaptation) | 叶面斑块 | MIT |
 
-> 本仓库以目录形式保存各原始项目的公开文件，并非 GitHub 官方 Fork。原作者及许可证信息以对应项目文件为准。
+## 使用说明
+
+- 每个项目仅建立 **一份** 同名文件夹，跨研究方向重复出现的上游仓库在一处复用。
+- 子目录中的 `SOURCE.md` 记录上游原始链接、对应方法、优先阅读的文件及许可信息。
+- **来源索引与代码副本是两回事。** 目录里只有 `SOURCE.md` 时，代表仅保存链接；如果目录中另有原始源码文件，则属于已镜像保存的文件。
+- `EMCAD` 使用 UT Austin Research License，`PlantSeg` 未核实仓库级许可，因此仅保存链接，不在本公开仓库重新发布其源码。
+- `ultralytics`、`yolov12` 适用 AGPL-3.0，复制或改动时需要遵守对应的开源条件；其他项目也应逐一遵守原始许可证。
+- 来源清单中提及的 Bi-AFPN-P2 与 TDA-YOLO 作者实现尚未核实，没有可确定的原仓库链接，因此本次没有作为额外项目收录。
+
+机器可读条目见 [projects.csv](./projects.csv)。
