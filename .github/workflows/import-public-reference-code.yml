@@ -1,0 +1,68 @@
+name: Import permitted public reference repositories
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/import-public-reference-code.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: one-time-reference-import
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Check out the collection
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+      - name: Import source files without executing upstream code
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p import-reports
+          report="import-reports/latest-import.md"
+          printf '# Source import report\n\n' > "$report"
+          while IFS='|' read -r folder url; do
+            [ -n "$folder" ] || continue
+            temp="$(mktemp -d)"
+            echo "Importing $folder from $url"
+            if GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 --single-branch --quiet "$url" "$temp/repo"; then
+              rm -rf "$temp/repo/.git"
+              mkdir -p "$folder"
+              cp -a "$temp/repo/." "$folder/"
+              printf -- '- **%s**: imported from %s\n' "$folder" "$url" >> "$report"
+            else
+              printf -- '- **%s**: clone failed; original URL %s\n' "$folder" "$url" >> "$report"
+            fi
+            rm -rf "$temp"
+          done <<'REPOS'
+          ultralytics|https://github.com/ultralytics/ultralytics.git
+          FGD|https://github.com/yzd-v/FGD.git
+          yolov12|https://github.com/sunsmarterjie/yolov12.git
+          RepQ-ViT|https://github.com/zkkli/RepQ-ViT.git
+          sam2|https://github.com/facebookresearch/sam2.git
+          DualBranchSSLDomainAdaptation|https://github.com/ARGhanbari/DualBranchSSLDomainAdaptation.git
+          REPOS
+          find ultralytics FGD yolov12 RepQ-ViT sam2 DualBranchSSLDomainAdaptation -type f -size +95M -print | while IFS= read -r f; do
+            printf -- '- **File omitted (>95 MB)**: %s\n' "$f" >> "$report"
+            rm -f "$f"
+          done
+          printf '\nExcluded from source mirroring due to licensing: [EMCAD](https://github.com/SLDGroup/EMCAD), [PlantSeg](https://github.com/tqwei05/PlantSeg).\n' >> "$report"
+      - name: Commit imported source snapshots
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- ultralytics FGD yolov12 RepQ-ViT sam2 DualBranchSSLDomainAdaptation import-reports
+          if git diff --cached --quiet; then
+            echo "No changes to import"
+          else
+            git commit -m "Import licensed upstream source snapshots for six research projects"
+            git push origin HEAD:main
+          fi
