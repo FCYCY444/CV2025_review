@@ -4,18 +4,20 @@
 
 **统计：** 原始清单共 10 个项目条目，跨清单重复 2 个（`ultralytics/ultralytics`、`zkkli/RepQ-ViT`），合并后 **8 个唯一项目**。原测试项目 `BinayKSingh/CCFF` 已从当前目录移除。
 
+**代码导入结果：** 6 个项目的公开源码已复制到本仓库对应目录；EMCAD 与 PlantSeg 因许可问题仅收录链接。可查看 [GitHub Actions 成功运行记录](https://github.com/FCYCY444/CV2025_review/actions/runs/44545628414)及[导入报告](./import-reports/latest-import.md)。
+
 ## 项目目录（按原仓库名命名）
 
-| 本仓库目录 | 原始 GitHub 仓库 | 对应方向 | 许可证 / 复制限制 |
-| --- | --- | --- | --- |
-| [ultralytics](./ultralytics/SOURCE.md) | [ultralytics/ultralytics](https://github.com/ultralytics/ultralytics) | 冠层图；叶面斑块 | AGPL-3.0 |
-| [FGD](./FGD/SOURCE.md) | [yzd-v/FGD](https://github.com/yzd-v/FGD) | 冠层图 | Apache-2.0 |
-| [yolov12](./yolov12/SOURCE.md) | [sunsmarterjie/yolov12](https://github.com/sunsmarterjie/yolov12) | 冠层图 | AGPL-3.0 |
-| [RepQ-ViT](./RepQ-ViT/SOURCE.md) | [zkkli/RepQ-ViT](https://github.com/zkkli/RepQ-ViT) | 冠层图；叶面斑块 | Apache-2.0 |
-| [EMCAD](./EMCAD/SOURCE.md) | [SLDGroup/EMCAD](https://github.com/SLDGroup/EMCAD) | 叶面斑块 | UT Austin Research License（限制再分发） |
-| [PlantSeg](./PlantSeg/SOURCE.md) | [tqwei05/PlantSeg](https://github.com/tqwei05/PlantSeg) | 叶面斑块 | 仓库级许可未核实 |
-| [sam2](./sam2/SOURCE.md) | [facebookresearch/sam2](https://github.com/facebookresearch/sam2) | 叶面斑块 | Apache-2.0（另见仓库其他许可文件） |
-| [DualBranchSSLDomainAdaptation](./DualBranchSSLDomainAdaptation/SOURCE.md) | [ARGhanbari/DualBranchSSLDomainAdaptation](https://github.com/ARGhanbari/DualBranchSSLDomainAdaptation) | 叶面斑块 | MIT |
+| 本仓库目录 | 原始 GitHub 仓库 | 对应方向 | 许可证 / 复制限制 | 保存状态 |
+| --- | --- | --- | --- | --- |
+| [ultralytics](./ultralytics/) | [ultralytics/ultralytics](https://github.com/ultralytics/ultralytics) | 冠层图；叶面斑块 | AGPL-3.0 | 已复制源码 |
+| [FGD](./FGD/) | [yzd-v/FGD](https://github.com/yzd-v/FGD) | 冠层图 | Apache-2.0 | 已复制源码 |
+| [yolov12](./yolov12/) | [sunsmarterjie/yolov12](https://github.com/sunsmarterjie/yolov12) | 冠层图 | AGPL-3.0 | 已复制源码 |
+| [RepQ-ViT](./RepQ-ViT/) | [zkkli/RepQ-ViT](https://github.com/zkkli/RepQ-ViT) | 冠层图；叶面斑块 | Apache-2.0 | 已复制源码 |
+| [EMCAD](./EMCAD/) | [SLDGroup/EMCAD](https://github.com/SLDGroup/EMCAD) | 叶面斑块 | UT Austin Research License（限制再分发） | 仅保存链接 |
+| [PlantSeg](./PlantSeg/) | [tqwei05/PlantSeg](https://github.com/tqwei05/PlantSeg) | 叶面斑块 | 仓库级许可未核实 | 仅保存链接 |
+| [sam2](./sam2/) | [facebookresearch/sam2](https://github.com/facebookresearch/sam2) | 叶面斑块 | Apache-2.0（另见仓库其他许可文件） | 已复制源码 |
+| [DualBranchSSLDomainAdaptation](./DualBranchSSLDomainAdaptation/) | [ARGhanbari/DualBranchSSLDomainAdaptation](https://github.com/ARGhanbari/DualBranchSSLDomainAdaptation) | 叶面斑块 | MIT | 已复制源码 |
 
 ## 使用说明
 
